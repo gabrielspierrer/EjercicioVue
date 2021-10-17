@@ -1,0 +1,11 @@
+html {
+    background-color: dodgerblue;
+}
+
+#app {
+    background-color: dodgerblue;
+}
+
+.horizontal {
+    display: inline-flex;
+  }

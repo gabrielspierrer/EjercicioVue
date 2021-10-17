@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Ejercicio Vue</title>
+</head>
+<body>
+      <div id="app" class="p-3 mb-2 text-white">
+        <h1 class="card-header">Juego del Orden</h1>
+          <button v-show="!comenzar" @click="comenzarJuego" class="btn btn-primary">Comenzar</button>
+          <button v-if="comenzar" @click="reiniciarJuego" class="btn btn-warning">Reiniciar</button>
+          <div v-if="comenzar" class="horizontal">
+            <ul>
+              <li v-for="(usuario, index) in usuarios">
+                <button @click="compararUsuarios(usuario, index)" class="btn btn-secondary">{{ usuario.name.first }}</button>
+              </li>
+            </ul>
+          </div>
+          <div class="horizontal">
+            <ol>
+              <li v-for="usuario in usuariosComparados">
+                <button class="btn btn-success">{{ usuario.name.first }}</button>
+              </li>
+            </ol>
+          </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+      <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
